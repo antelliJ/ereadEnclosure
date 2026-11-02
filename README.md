@@ -16,19 +16,47 @@ The schematic uses pin headers as placeholders for things like the switch and SP
 
 ### File structure
 `\PCB\` includes files relevant for the PCB design and manufacturing. 
-<br>
-    `\PCB\production` are the files used for PCB manufacturing
+<br></br>
+    `\PCB\production\` are the files used for PCB manufacturing
 
 `\3dModel\` is intended for all 3d printed related files.
-<br>
-    `\3dModel\editable` contains the editable files made in freecad for the enclosure
+<br></br>
+    `\3dModel\editable\` contains the editable files made in freecad for the enclosure
 
-<br>
-    `\3dModel\printable` contains the print ready files as a `.3mf` file
+<br></br>
+    `\3dModel\printable\` contains the print ready files as a `.3mf` file
 
+
+`\Code\` Is a copy of the original repository. 
+you can learn more about it [here](https://github.com/antelliJ/EPUB-Ereader)
+
+It uses the GxEPD2 library to drive the display using SPI, using the arduino framework since that is what I am most comfortable with.
 
 ## Bill of Materials
-A nicely formatted excel sheet is provided at `\PCB\production\Keychain-Bom.xlsx`
+A nicely formatted excel sheet is provided at `\PCB\production\ereader-bom.xlsx` with a few more comments. 
 The below is just a static version of that...
 
-COMING SOON
+| Designator | Footprint                                        | Quantity | Value                       | LCSC Part # | Alt Site                                                                                                       |
+| ---------- | ------------------------------------------------ | -------- | --------------------------- | ----------- | -------------------------------------------------------------------------------------------------------------- |
+| J1         | PinHeader_2x04_P2.54mm_Vertical                  | 1        | EPD-4.2in - 2x04            | C55829516   |                                                                                                                |
+| J2         | Molex_PicoBlade_53047-0810_1x08_P1.25mm_Vertical | 1        | Remote Communication                      | C240845     |                                                                                                                |
+| J3         | USB_C_Receptacle_GCT_USB4085                     | 1        | USB_C_Receptacle_USB2.0_14P | C2765186    |                                                                                                                |
+| J4         | SPI-microsd-1x06                                 | 1        | SPI Micro SD card slot      |             | [https://www.aliexpress.com/item/1005008633757049.html](https://www.aliexpress.com/item/1005008633757049.html) |
+| R1, R2     | 603                                              | 2        | 5.1k                        | C23186      |                                                                                                                |
+| SW1        | PinHeader_1x03_P2.54mm_Horizontal                | 1        | SW_SPDT                     | FILLER      |                                                                                                                |
+| U1         | ESP32-S3-DevKitC                                 | 1        | ESP32-S3-DevKitC            |             | https://www.aliexpress.com/item/1005007319706057.html                                                          |
+| U2         | MCP73871                                         | 1        | MCP73871                    |             | https://www.aliexpress.com/item/32779467674.html                                                               |
+| U3         | Buck Boost 3v3                                   | 1        | Buck Boost Converter        |             | https://www.aliexpress.com/item/1005006289357253.html                                                          |
+
+
+A 10k thermistor is also used by the MCP73871 alongside a capacitor, which is usually given with the module.
+
+## References
+A lot of things were picked up on the way of creating this project spontaneously
+
+used [Table to Markdown](https://tabletomarkdown.com/convert-spreadsheet-to-markdown/) to make the above BOM in the readme
+
+There is some AI usage in the original E-reader project code, as follows:
+- Code autocomplete and debugging
+- AI explanations for unfamiliar C++ concepts
+- Drafting PlatformIO calls for building
