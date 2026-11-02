@@ -1,6 +1,7 @@
 #ereader Enclosure
 An expansion on [my ereader project](https://github.com/antelliJ/EPUB-Ereader) made using the arduino framework, and rendering using GxEPD2 on an ESP-32 S3
 
+<img width="339" height="193" alt="Screenshot 2026-11-01 192144" src="https://github.com/user-attachments/assets/d7a369c4-2a89-4849-8b95-47265f1eaa66" />
 
 
 ## Purpose
@@ -13,11 +14,16 @@ Charging and data goes through a single usb c cable, an improvement frmo before 
 The schematic uses pin headers as placeholders for things like the switch and SPI sd card module, so ensure you choose what you need when designing it.
 
 [![View PCB on KiCanvas](https://hack.club/pcb-badge)](https://kicanvas.org/?repo=https%3A%2F%2Fgithub.com%2FantelliJ%2FereadEnclosure%2Ftree%2Fmain%2FPCB)
+<img width="526" height="418" alt="Screenshot 2026-11-01 194429" src="https://github.com/user-attachments/assets/12c62f89-4b3e-4850-b5e1-f8bc8bca0363" />
+
+<img width="722" height="677" alt="Screenshot 2026-11-01 194445" src="https://github.com/user-attachments/assets/b37eb141-a059-41cd-b788-a3673929ef86" />
 
 ### File structure
-`\PCB\` includes files relevant for the PCB design and manufacturing. 
+`\PCB\` includes files relevant for the schematic, PCB design, and manufacturing. 
 <br></br>
     `\PCB\production\` are the files used for PCB manufacturing
+<img width="3508" height="2480" alt="schematic v2" src="https://github.com/user-attachments/assets/38882b63-2ebc-4dbc-b288-1006230479c2" />
+
 
 `\3dModel\` is intended for all 3d printed related files.
 <br></br>
